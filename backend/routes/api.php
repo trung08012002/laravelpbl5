@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FoodController;
+use Illuminate\Support\Facades\Redirect;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -16,6 +17,12 @@ use App\Http\Controllers\FoodController;
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
+
 });
 
-Route::apiResource('food',FoodController::class);
+
+    Route::apiResource('foods',FoodController::class)->missing(function (Request $request) {
+        return Redirect::route('foods.index');
+    });
+
+

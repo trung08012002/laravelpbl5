@@ -7,7 +7,7 @@ use App\Http\Resources\FoodResource;
 use Illuminate\Http\Request;
 use App\Repositories\Food\IFoodRepository;
 
-use function PHPUnit\Framework\isEmpty;
+
 
 class FoodController extends Controller
 {
@@ -63,8 +63,8 @@ class FoodController extends Controller
         ];
        return $this->foodRepo->update($request->id,$dataUpdate);
     }
-    public function delete(Request $request)
+    public function destroy(Request $request)
     {
-
+      
     }
 }
