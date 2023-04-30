@@ -9,4 +9,13 @@ class DonHang extends Model
 {
     use HasFactory;
     protected $donhang="donhang";
+    protected $fillable=["id_trangthai","id_food","tongtien"];
+    public function trangthai()
+    {
+        return $this->belongsTo(TrangThaiDonHang::class,"id_trangthai");
+    }
+    public function food()
+    {
+        
+    }
 }

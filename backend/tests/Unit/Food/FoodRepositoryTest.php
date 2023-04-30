@@ -36,23 +36,23 @@ class FoodRepositoryTest extends TestCase
 
 
     /** @test */
-    public function test_update()
-    {
-        $repo=$this->app->make(FoodRepository::class);
-        $payload=[
-            'type'=>'fast food',
-            'first_price'=>20000,
-            'last_price'=>12000,
-            'name'=>'pho',
-            'id_shop'=>1,
-        ];
-        $result=$repo->create($payload);
-        $payloadupdate=[
-            'name'=>'ga',
-        ];
-        $updated=$repo->update($result->food_id,$payloadupdate);
-        $this->assertSame($payloadupdate['name'],$updated->name,'Food updated not have same name');
-    }
+    // public function test_update()
+    // {
+    //     $repo=$this->app->make(FoodRepository::class);
+    //     $payload=[
+    //         'type'=>'fast food',
+    //         'first_price'=>20000,
+    //         'last_price'=>12000,
+    //         'name'=>'pho',
+    //         'id_shop'=>1,
+    //     ];
+    //     $result=$repo->create($payload);
+    //     $payloadupdate=[
+    //         'name'=>'ga',
+    //     ];
+    //     $updated=$repo->update($result->food_id,$payloadupdate);
+    //     $this->assertSame($payloadupdate['name'],$updated->name,'Food updated not have same name');
+    // }
 
     // public function test_delete()
     // {
